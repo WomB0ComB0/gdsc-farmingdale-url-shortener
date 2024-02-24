@@ -1,24 +1,23 @@
 import React from 'react'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../ui/card'
+import { Card, CardHeader, CardTitle, CardContent } from '../ui/card'
 
-const UrlFormContainer = () => {
+export const UrlFormContainer: React.FC<Readonly<{
+  children: React.ReactNode
+}>> = ({
+  children
+}) => {
   return (
     <Card>
       <>
         <CardHeader>
           <CardTitle>
-
+            Shorten a URL
           </CardTitle>
-          <CardDescription>
-
-          </CardDescription>
         </CardHeader>
         <CardContent>
-          
+          {children}
         </CardContent>
       </>
     </Card>
   )
 }
-
-export default UrlFormContainer

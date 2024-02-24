@@ -1,0 +1,50 @@
+{
+    "name": "GDSC Farmingdale | Url",
+    "short_name": "GDSC FSC Url",
+    "theme_color": "#66A266",
+    "background_color":
+    "#006400",
+    "start_url": "/",
+    "description": "GDSC FSC | Url - Your go-to link shortener for staying updated on GDSC FSC's latest events and domains. Easily manage and share URLs with this convenient web application.",
+    "scope": "/",
+    "dir": "ltr",
+    "orientation": "portrait-primary",
+    "display_override": ["minimal-ui","browser","fullscreen"],
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "../assets/svgs/logo.svg",
+            "type": "image/svg+xml",
+            "sizes": "any",
+            "purpose": "any"
+        },
+        {
+            "src": "../PWA/android/android-icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "maskable"
+        },
+        {
+            "src": "../assets/images/Logo.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "../assets/images/Screenshot.png",
+            "sizes": "1467x1305",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "GDSC Farmingdale | Url"
+        },
+        {
+            "src": "../assets/images/Screenshot2.png",
+            "sizes": "779x1041",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "GDSC Farmingdale | Url"
+        }
+    ]
+}

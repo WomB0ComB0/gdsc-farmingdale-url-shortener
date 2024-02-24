@@ -1,11 +1,17 @@
-import React from 'react'
+import { Head } from '@/shared/Head'
 
-type Props = {}
-
-const Contact = (props: Props) => {
+export const Contact = function Contact(){
   return (
-    <div>Contact</div>
+    <>
+      <>
+        <Head
+          title={`Contact`}
+          description={`Contact`}
+        />
+      </>
+      <>
+        <h1>Contact</h1>
+      </>
+    </>
   )
 }
-
-export default Contact

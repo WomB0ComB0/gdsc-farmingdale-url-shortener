@@ -1,8 +1,8 @@
 import z from 'zod';
 
-export const contactFormSchema = z.object({
+export const urlShortener = z.object({
   url: z.string().url(),
-  slug: z.string().min(1).max(255),
+  slug: z.string().min(1).max(255).regex(/^[a-zA-Z0-9-]+$/i),
 });
 
-export type ContactForm = z.infer<typeof contactFormSchema>;
+export type TShortenerSchema = z.infer<typeof urlShortener>;

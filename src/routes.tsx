@@ -1,17 +1,30 @@
-import { BrowserRouter } from 'react-router-dom'
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
-import { NotFound } from "../components/dom/index";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { NotFound, Loading, Fallback } from './screens'
+import {
+  App,
+  Slug,
+  Privacy,
+  Terms,
+  Accessibility,
+  Cookies,
+  Contact
+} from './pages';
+import { NavBar, FooterBar } from './components';
+import { Providers } from './providers/Providers';
+import { useOnlineStatus } from './hooks/useOnlineStatus';
+import { useHasMounted } from './hooks/useHasMounted';
 
-export const AppRoutes = function AppRoutes() {
+export const AppRoutes = () => {
   return (
     <Routes>
-        <Route path={`/`} element={<App />} />
-        <Route path={`privacy`} element={<Privacy />} />
-        <Route path={`terms`} element={<Terms />} />
-        <Route path={`accessibility`} element={<Accessibility />} />
-        <Route path={`cookies`} element={<Cookies />} />
-        <Route path={`contact`} element={<Contact />} />
-        <Route path={`*`}  element={<NotFound />}/>
+      <Route index path={`/`} element={<App />} />
+      <Route path={`/:slug`} element={<Slug />} />
+      <Route path={`privacy`} element={<Privacy />} />
+      <Route path={`terms`} element={<Terms />} />
+      <Route path={`accessibility`} element={<Accessibility />} />
+      <Route path={`cookies`} element={<Cookies />} />
+      <Route path={`contact`} element={<Contact />} />
+      <Route path={`*`} element={<NotFound />} />
     </Routes>
   )
 }
@@ -19,16 +32,20 @@ export const AppRoutes = function AppRoutes() {
 const RootLayout: React.FC<Readonly<{
   children: React.ReactNode
 }>> = ({ children }) => {
+  const isOnline = useOnlineStatus();
+  const isLoading = useHasMounted();
   return (
-    <>
+    <Providers>
       <NavBar />
       <main
         className={``}
       >
-        {children}
+        {isLoading && <Loading />}
+        {isOnline && children}
+        {!isOnline && <Fallback />}
       </main>
       <FooterBar />
-    </>
+    </Providers>
   )
 }
 
