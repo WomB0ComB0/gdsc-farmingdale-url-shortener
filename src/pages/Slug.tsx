@@ -26,9 +26,9 @@ export const Slug = () => {
         const finalUrl = firstDoc.data().url;
         setUrl(finalUrl ?? 'No final url');
 
-        setTimeout(() => {
-          window.location.replace(url);
-        }, 3000);
+
+          window.location.replace(finalUrl);
+
 
       } catch (error) {
         toast.error(`Error getting documents: ${error}`);
@@ -36,7 +36,7 @@ export const Slug = () => {
     };
 
     fetchData();
-  }, [navigate, slug, url]);
+  }, [navigate, slug]);
 
   return (
     <>

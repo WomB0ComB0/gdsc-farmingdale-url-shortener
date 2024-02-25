@@ -4,14 +4,12 @@ export const useHasMounted = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const handleLoad = () => {
+    const timeout = setTimeout(() => {
       setLoading(false);
-    };
-
-    window.addEventListener("load", handleLoad);
+    }, 1000);
 
     return () => {
-      window.removeEventListener("load", handleLoad);
+      clearTimeout(timeout);
     };
   }, []);
 
