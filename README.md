@@ -1,4 +1,4 @@
-# GDSC Farmingdale Links
+# GDSC Farmingdale Url
 
 ![This is a test](.github/assets/img.png)
 
