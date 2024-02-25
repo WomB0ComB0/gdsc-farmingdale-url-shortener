@@ -2,14 +2,18 @@ import { Head } from '@/shared/Head'
 import { Link } from '@/components/custom/Link'
 import { appEmail, appName, appOrigin } from '@/constants/app'
 import { Legal } from '@/constants/legal'
+import { usePageEffect } from '@/core/page'
 
 export const Accessibility = function Accessibility() {
+  usePageEffect({ title: `Accessibility` });
   return (
     <>
       <>
         <Head
           title={`Accessibility`}
-          description={`Accessibility`}
+          description={`
+            ${appName} is committed to making our website, ${appOrigin}, accessible to all individuals, including those with disabilities. We strive to ensure that our website complies with the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
+          `}
         />
       </>
       <article

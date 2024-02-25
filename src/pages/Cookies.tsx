@@ -2,14 +2,18 @@ import { Head } from '@/shared/Head'
 import { appName, appOrigin } from '@/constants/app'
 import { Link } from 'react-router-dom'
 import { Legal } from '@/constants/legal'
+import { usePageEffect } from '@/core/page'
 
 export const Cookies = function Cookies() {
+  usePageEffect({ title: `Cookies` });
   return (
     <>
       <>
         <Head
           title={`Cookies`}
-          description={`Cookies`}
+          description={`
+            This is the Cookie Policy for ${appName}, accessible from ${appOrigin}
+          `}
         />
       </>
       <article

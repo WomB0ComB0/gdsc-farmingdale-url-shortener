@@ -2,14 +2,18 @@ import { Head } from '@/shared/Head'
 import { Link } from '@/components/custom/Link'
 import { appName, appOrigin, appEmail as email } from '@/constants/app'
 import { Legal } from '@/constants/legal'
+import { usePageEffect } from '@/core/page'
 
 export const Privacy = function Privacy() {
+  usePageEffect({ title: `Privacy` });
   return (
     <>
       <>
         <Head
           title={`Privacy`}
-          description={`Privacy`}
+          description={`
+            Your privacy is important to us. It is ${appName}&#39; policy to respect your privacy regarding any information we may collect from you across our website, ${appOrigin}, and other sites we own and operate.
+          `}
         />
       </>
       <article

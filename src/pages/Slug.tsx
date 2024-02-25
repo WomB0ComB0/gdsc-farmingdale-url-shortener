@@ -25,13 +25,11 @@ export const Slug = () => {
 
         querySnapshot.forEach((doc) => {
           const finalUrl = doc.data().url;
-          console.log(finalUrl);
           setUrl(finalUrl ?? 'No final url');
-          console.log(url ?? 'No url');
           window.location.replace(url);
         });
       } catch (error) {
-        console.error("Error getting documents: ", error);
+        toast.error(`Error getting documents`,);
       }
     };
 

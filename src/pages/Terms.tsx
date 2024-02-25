@@ -1,15 +1,19 @@
 import { appOrigin, appName } from '@/constants/app'
 import { Legal } from '@/constants/legal'
+import { usePageEffect } from '@/core/page'
 import { Head } from '@/shared/Head'
 import { Link } from 'react-router-dom'
 
 export const Terms = function Terms() {
+  usePageEffect({ title: `Terms` });
   return (
     <>
       <>
         <Head
           title={`Terms`}
-          description={`Terms`}
+          description={`
+            By accessing ${appOrigin}, you agree to abide by these Terms of Service and to comply with all applicable laws and regulations. If you do not agree with these Terms of Service, you are prohibited from using or accessing this website or using any other services provided by ${appName}.
+          `}
         />
       </>
       <article
