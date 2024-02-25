@@ -15,7 +15,7 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import { UrlFormContainer } from './UrlFormContainer';
 import { db } from '@/core/firebase';
 import { addDoc, collection, } from 'firebase/firestore';
-
+import { toast } from 'sonner';
 interface UrlShortenerProps {
   url: string;
   slug: string;
@@ -32,9 +32,19 @@ export const UrlForm: React.FC = () => {
   })
   const onSubmit = (data: UrlShortenerProps) => {
     if (capVal) {
-      addDoc(collection(db, "urls"), data);
+      try {
+        addDoc(collection(db, "urls"), data);
+        if (form.formState.isSubmitSuccessful) {
+          form.reset();
+          setCapVal(null);
+          toast.success(`URL shortened successfully!`);
+        }
+      } catch (error) {
+        toast.error(`Error: ${error}!`);
+      }
     }
-  }
+  };
+
 
   return (
     <UrlFormContainer>
