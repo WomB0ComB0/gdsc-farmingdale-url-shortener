@@ -2,14 +2,12 @@
 
 ![This is a test](.github/assets/img.png)
 
-A comprehensive UI portal for the GDSC Farmingdale events. Fetches data from the [Links API](https://github.com/GDSC-FSC/gdsc-farmingdale-links-api) GDSC Farmingdale Events API</a> and provides an interactive user interface.
+A comprehensive UI portal for the GDSC Farmingdale. Fetches data from the [Links API](https://github.com/WomB0ComB0/gdsc-farmingdale-url-shortener) GDSC Farmingdale Url shortener</a> and provides an interactive user interface.
 
 ## Features
 
-- Fetches GDSC Farmingdale events from the dedicated API.
-- Dynamic UI built using React.
-- Leveraging modern development tools with Vite and TypeScript.
-- Designed with responsiveness in mind.
+- Recaptcha.
+- Firestore.
 
 ## Prerequisites
 
@@ -24,13 +22,13 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/GDSC-FSC/gdsc-farmingdale-links
+    git clone https://github.com/WomB0ComB0/gdsc-farmingdale-url-shortener
     ```
 
 2. Navigate to the directory:
 
     ```bash
-    cd gdsc-farmingdale-links
+    cd gdsc-farmingdale-url-shortener
    ```
 
 3. Install the required dependencies:
