@@ -6,7 +6,7 @@ export const Events: React.FC<{
 }> = ({children}) => {
   return (
     <>
-      <Toaster />
+      <Toaster position={`top-center`} />
       {children}
     </>
   )
