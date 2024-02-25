@@ -12,7 +12,14 @@ export const Accessibility = function Accessibility() {
           description={`Accessibility`}
         />
       </>
-      <>
+      <article
+        className={`
+          max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8
+          prose
+          sm:prose-lg
+          dark:prose-dark z-10
+        `}
+      >
         <Legal />
         <h1 className={`
 
@@ -58,7 +65,7 @@ export const Accessibility = function Accessibility() {
       `}>
           This policy was last updated on 26 December 2023.
         </p>
-      </ >
+      </article>
     </>
   )
 }

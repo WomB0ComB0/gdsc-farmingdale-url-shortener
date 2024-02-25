@@ -7,7 +7,6 @@ import {
   Terms,
   Accessibility,
   Cookies,
-  Contact
 } from './pages';
 import { NavBar, FooterBar } from './components';
 import { Providers } from './providers/Providers';
@@ -17,13 +16,12 @@ import { useHasMounted } from './hooks/useHasMounted';
 export const AppRoutes = () => {
   return (
     <Routes>
-      <Route index path={`/`} element={<App />} />
-      <Route path={`/:slug`} element={<Slug />} />
-      <Route path={`privacy`} element={<Privacy />} />
-      <Route path={`terms`} element={<Terms />} />
-      <Route path={`accessibility`} element={<Accessibility />} />
-      <Route path={`cookies`} element={<Cookies />} />
-      <Route path={`contact`} element={<Contact />} />
+        <Route path={`/`} element={<App />} />
+        <Route path={`/:slug`} element={<Slug />} />
+        <Route path={`privacy`} element={<Privacy />} />
+        <Route path={`terms`} element={<Terms />} />
+        <Route path={`accessibility`} element={<Accessibility />} />
+        <Route path={`cookies`} element={<Cookies />} />
       <Route path={`*`} element={<NotFound />} />
     </Routes>
   )
@@ -38,11 +36,11 @@ const RootLayout: React.FC<Readonly<{
     <Providers>
       <NavBar />
       <main
-        className={``}
+        className={`
+        flex flex-col items-center justify-center w-full h-full min-h-[80dvh]
+        `}
       >
-        {isLoading && <Loading />}
-        {isOnline && children}
-        {!isOnline && <Fallback />}
+        {isLoading ? <Loading /> : isOnline ? children : <Fallback />}
       </main>
       <FooterBar />
     </Providers>

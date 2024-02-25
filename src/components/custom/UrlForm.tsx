@@ -22,32 +22,36 @@ interface UrlShortenerProps {
 }
 
 export const UrlForm: React.FC = () => {
+  const defaultValues = {
+    url: '',
+    slug: '',
+  };
   const [capVal, setCapVal] = useState<string | null>(null);
   const form = useForm<TShortenerSchema>({
-    resolver: zodResolver(urlShortener),
+    resolver: zodResolver(urlShortener), defaultValues,
   })
   const onSubmit = (data: UrlShortenerProps) => {
     if (capVal) {
       addDoc(collection(db, "urls"), data);
     }
   }
-  
+
   return (
     <UrlFormContainer>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className={`
-          
+          flex flex-col items-center justify-center w-full h-full gap-2
           `}
-        >0
+        >
           <FormField
             control={form.control}
             name={`url`}
             render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input {...field} placeholder="Enter your email" type={`url`} />
+              <FormItem className={`w-full mb-2`}>
+                <FormControl className={`w-full`}>
+                  <Input className={`w-full`} {...field} placeholder="Enter a url" type={`url`} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -57,22 +61,22 @@ export const UrlForm: React.FC = () => {
             control={form.control}
             name={`slug`}
             render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input {...field} placeholder="Enter your email" type={`text`} />
+              <FormItem className={`w-full`}>
+                <FormControl className={`w-full`}>
+                  <Input className={`w-full`} {...field} placeholder="Enter your slug" type={`text`} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
           <ReCAPTCHA
-            className={`w-full flex items-center justify-center rounded-md h-fit`}
+            className={`w-full flex items-center justify-center rounded-md h-fit mt-6`}
             sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
             onChange={(val: string | null) => { setCapVal(val) }}
           />
           <Button
             disabled={!capVal && form.formState.isSubmitting}
-            className={``}
+            className={`w-full`}
           >
             Shorten
           </Button>

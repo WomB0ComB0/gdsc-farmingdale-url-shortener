@@ -3,7 +3,7 @@ import { Legal } from '@/constants/legal'
 import { Head } from '@/shared/Head'
 import { Link } from 'react-router-dom'
 
-export const Terms = function Terms()  {
+export const Terms = function Terms() {
   return (
     <>
       <>
@@ -12,7 +12,14 @@ export const Terms = function Terms()  {
           description={`Terms`}
         />
       </>
-      <>
+      <article
+        className={`
+          max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8
+          prose
+          sm:prose-lg
+          dark:prose-dark z-10
+        `}
+      >
         <Legal />
         <h1 className={`
 
@@ -23,13 +30,13 @@ export const Terms = function Terms()  {
 
         `}>
           These Terms of Service govern your use of the website located at
-          <Link className={`underline ml-[-14px]`} to={appOrigin}>{appOrigin}</Link> and any related services
+          <Link className={`underline ml-1`} to={appOrigin}>{appOrigin}</Link> and any related services
           provided by {appName}.
         </p>
         <p className={`
 
         `}>
-          By accessing <Link className={`underline ml-[-14px]`} to={appOrigin}>{appOrigin}</Link>, you agree to
+          By accessing <Link className={`underline`} to={appOrigin}>{appOrigin}</Link>, you agree to
           abide by these Terms of Service and to comply with all applicable laws
           and regulations. If you do not agree with these Terms of Service, you
           are prohibited from using or accessing this website or using any other
@@ -226,7 +233,7 @@ export const Terms = function Terms()  {
           the laws of United States. You irrevocably submit to the exclusive
           jurisdiction of the courts in that State or location.
         </p>
-      </>
+      </article>
     </>
   )
 }

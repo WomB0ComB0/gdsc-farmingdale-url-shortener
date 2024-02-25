@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getDoc, doc } from "firebase/firestore";
+import { getDocs, query, collection, where } from "firebase/firestore";
 import { db } from "@/core/firebase";
 import { Head } from "@/shared/Head";
-import { toast } from "sonner";
+import { toast } from 'sonner';
 
 export const Slug = () => {
   const { slug } = useParams();
@@ -11,20 +11,32 @@ export const Slug = () => {
   const [url, setUrl] = useState("");
 
   useEffect(() => {
-    const fetchUrl = async () => {
-      const docRef = doc(db, "urls", slug!);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        setUrl(docSnap.data().url);
-        navigate(url);
-      } else {
-        toast.error("No such document!");
-        navigate("/");
+    const fetchData = async () => {
+      try {
+        const docRef = collection(db, "urls");
+        const q = query(docRef, where('slug', "==", slug));
+        const querySnapshot = await getDocs(q);
+
+        if (querySnapshot.empty) {
+          toast.error('Error: No such document!');
+          navigate('/');
+          return;
+        }
+
+        querySnapshot.forEach((doc) => {
+          const finalUrl = doc.data().url;
+          console.log(finalUrl);
+          setUrl(finalUrl ?? 'No final url');
+          console.log(url ?? 'No url');
+          window.location.replace(url);
+        });
+      } catch (error) {
+        console.error("Error getting documents: ", error);
       }
     };
 
-    fetchUrl();
-  }, [slug, navigate, url]);
+    fetchData();
+  }, [navigate, slug, url]);
 
   return (
     <>
@@ -33,5 +45,5 @@ export const Slug = () => {
         description={`Redirecting`}
       />
     </>
-  )
-}
+  );
+};

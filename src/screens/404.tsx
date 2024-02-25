@@ -5,18 +5,25 @@ export const NotFound = () => {
   usePageEffect({ title: '404' })
   return (
     <>
-      <Head title={'The page is not found'} />
+      <Head title={'404'} />
       <>
-        <div className="flex h-screen flex-col bg-white">
-          <img
-            src="/assets/images/og.png"
-            alt=""
-            className="h-64 w-full object-cover"
-          />
+        <section className="flex flex-col items-center justify-center w-full h-full top-0 z-10 absolute ">
+          <picture
+            className="relative w-full h-[25rem]"
+            role="img"
+            aria-label="404"
+          >
+            <img
+              src="/assets/images/og.png"
+              alt=""
+              className="h-full w-full object-cover"
+            />
 
-          <div className="flex flex-1 items-center justify-center">
-            <div className="mx-auto max-w-xl px-4 py-8 text-center">
-              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          </picture>
+
+          <section className="flex flex-1 items-center justify-center ">
+            <article className="mx-auto max-w-xl px-4 py-8 text-center">
+              <h1 className="text-2xl font-bold tracking-tight text-gray-400 sm:text-4xl">
                 We can't find that page.
               </h1>
 
@@ -30,9 +37,9 @@ export const NotFound = () => {
               >
                 Go Back Home
               </Link>
-            </div>
-          </div>
-        </div>
+            </article>
+          </section>
+        </section>
       </>
     </>
   )

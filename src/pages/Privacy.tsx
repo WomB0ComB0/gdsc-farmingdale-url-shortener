@@ -3,7 +3,7 @@ import { Link } from '@/components/custom/Link'
 import { appName, appOrigin, appEmail as email } from '@/constants/app'
 import { Legal } from '@/constants/legal'
 
-export const Privacy = function Privacy () {
+export const Privacy = function Privacy() {
   return (
     <>
       <>
@@ -12,7 +12,14 @@ export const Privacy = function Privacy () {
           description={`Privacy`}
         />
       </>
-      <>
+      <article
+        className={`
+          max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8
+          prose
+          sm:prose-lg
+          dark:prose-dark z-10
+        `}
+      >
         <Legal />
         <h1 className={`
 
@@ -25,7 +32,7 @@ export const Privacy = function Privacy () {
           Your privacy is important to us. It is {appName}&#39; policy to respect
           your privacy and comply with any applicable law and regulation regarding
           any personal information we may collect about you, including across our
-          website, <Link className={`underline ml-[-10px]`} to={appOrigin}>{appOrigin}</Link>, and other sites we
+          website, <Link className={`underline`} to={appOrigin}>{appOrigin}</Link>, and other sites we
           own and operate.
         </p>
         <p className={`
@@ -441,7 +448,7 @@ export const Privacy = function Privacy () {
       `}>
           {appName} Support Team (<Link className={`underline ml-[-14px]`} to={`mailto:${email}`}>{email}</Link>)
         </p>
-      </>
+      </article>
     </>
   )
 }

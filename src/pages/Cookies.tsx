@@ -12,10 +12,17 @@ export const Cookies = function Cookies() {
           description={`Cookies`}
         />
       </>
-      <>
+      <article
+        className={`
+          max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8
+          prose
+          sm:prose-lg
+          dark:prose-dark z-10
+        `}
+      >
         <Legal />
         <h1>Cookie Policy for <strong>{appName}</strong></h1>
-        <p>This is the Cookie Policy for {appName}, accessible from  <Link className={`underline ml-[-14px]`} to={appOrigin}>
+        <p>This is the Cookie Policy for {appName}, accessible from  <Link className={`underline `} to={appOrigin}>
           {appOrigin}
         </Link>
         </p>
@@ -28,7 +35,7 @@ export const Cookies = function Cookies() {
 
         <p><strong>Disabling Cookies</strong></p>
 
-        <p>You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of the this site. Therefore it is recommended that you do not disable cookies. This Cookies Policy was created with the help of the <Link className={`underline ml-[-14px]`} to="https://www.cookiepolicygenerator.com/cookie-policy-generator/">Cookies Policy Generator</Link>.</p>
+        <p>You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of the this site. Therefore it is recommended that you do not disable cookies. This Cookies Policy was created with the help of the <Link className={`underline `} to="https://www.cookiepolicygenerator.com/cookie-policy-generator/">Cookies Policy Generator</Link>.</p>
         <p><strong>The Cookies We Set</strong></p>
 
         <ul>
@@ -48,12 +55,12 @@ export const Cookies = function Cookies() {
         </ul>
         <p><strong>More Information</strong></p>
         <p>Hopefully that has clarified things for you and as was previously mentioned if there is something that you aren't sure whether you need or not it's usually safer to leave cookies enabled in case it does interact with one of the features you use on our site.</p>
-        <p>For more general information on cookies, please read the <Link className={`underline ml-[-14px]`} to="https://www.cookiepolicygenerator.com/sample-cookies-policy/">Cookies Policy article</Link>.</p>
+        <p>For more general information on cookies, please read the <Link className={`underline `} to="https://www.cookiepolicygenerator.com/sample-cookies-policy/">Cookies Policy article</Link>.</p>
         <p>However if you are still looking for more information then you can contact us through one of our preferred contact methods:</p>
         <ul>
           <li>Email: mikeodnis3242004@gmail.com</li>
         </ul>
-      </>
+      </article>
     </>
   )
 }
