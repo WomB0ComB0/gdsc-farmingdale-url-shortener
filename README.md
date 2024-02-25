@@ -2,7 +2,7 @@
 
 ![This is a test](.github/assets/img.png)
 
-A comprehensive UI portal for the GDSC Farmingdale. Fetches data from the [Links API](https://github.com/WomB0ComB0/gdsc-farmingdale-url-shortener) GDSC Farmingdale Url shortener</a> and provides an interactive user interface.
+A comprehensive UI portal for the GDSC Farmingdale. Fetches data from the firestore database GDSC Farmingdale Url shortener</a> and provides an interactive user interface.
 
 ## Features
 
