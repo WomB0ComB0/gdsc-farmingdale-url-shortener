@@ -87,6 +87,7 @@ export const UrlForm: React.FC = () => {
           <Button
             disabled={!capVal && form.formState.isSubmitting}
             className={`w-full`}
+            type={`submit`}
           >
             Shorten
           </Button>
