@@ -1,21 +1,42 @@
 name: autofix.ci
+
 on:
   pull_request:
   push:
     branches: [ "main" ]
+
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   autofix:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 16
 
-      - run: npm ci
-      - run: npx prettier --write .
+      - name: Install dependencies
+        run: npm ci
 
-      - uses: autofix-ci/action@d3e591514b99d0fca6779455ff8338516663f7cc
+      - name: Run Prettier
+        run: npx prettier --write .
+
+      - name: Run autofix
+        uses: autofix-ci/action@d3e591514b99d0fca6779455ff8338516663f7cc
+        with:
+          exclude: '.github'
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.AUTOFIX_TOKEN }}
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m 'Apply autofixes'
+          git push
