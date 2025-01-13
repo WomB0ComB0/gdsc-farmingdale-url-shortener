@@ -1,65 +1,72 @@
-# GDSC Farmingdale Url
+# GDSC FSC URL Shortener
 
-![This is a test](.github/assets/img.png)
+## Overview
+The GDSC FSC URL Shortener is a web application designed to help users manage and share URLs easily. Built for the Google Developer Student Clubs at Farmingdale State College, this application allows users to shorten links, making it convenient for sharing and managing links for events and resources.
 
-A comprehensive UI portal for the GDSC Farmingdale. Fetches data from the firestore database GDSC Farmingdale Url shortener</a> and provides an interactive user interface.
+## Major Components
 
-## Features
+1. **Dependency Management**
+   - The project uses GitHub Actions for automating dependency updates via Dependabot for the npm package ecosystem.
 
-- Recaptcha.
-- Firestore.
+2. **CI/CD Workflows**
+   - Several GitHub workflows are defined for managing pull requests, performing code analysis with CodeQL, and automating code formatting with Prettier.
+   - There’s also a workflow to mark stale issues and pull requests to maintain repository cleanliness.
 
-## Prerequisites
+3. **Frontend Components**
+   - The application uses React for building the user interface. Key components include:
+     - **Providers**: Wraps the application in context providers for theming and cookie consent.
+     - **Head**: Manages the document head for SEO and Open Graph data.
+     - **Form Components**: Custom components for handling forms, including input fields, labels, and validation messages.
+     - **UI Components**: Reusable UI elements such as buttons, cards, dropdown menus, and tooltips.
 
-Before you begin, ensure you have met the following requirements:
+4. **Styles**
+   - Tailwind CSS is used for styling the application. Custom themes and utility classes are defined for consistent design.
 
-- Git: [Download](https://git-scm.com/downloads)
-- Node.js: [Download](https://nodejs.org/)
-- npm: [Download](https://www.npmjs.com/)
+5. **Service Workers**
+   - Service workers are employed to enhance performance and provide offline capabilities.
 
-## Setup & Installation
+## Installation Instructions
 
-1. Clone the repository:
+To set up the GDSC FSC URL Shortener locally, follow these steps:
 
-    ```bash
-    git clone https://github.com/WomB0ComB0/gdsc-farmingdale-url-shortener
-    ```
-
-2. Navigate to the directory:
-
-    ```bash
-    cd gdsc-farmingdale-url-shortener
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/GDSC-FSC/gdsc-farmingdale-links.git
+   cd gdsc-farmingdale-links
    ```
 
-3. Install the required dependencies:
+2. **Install Node.js and npm**
+   Ensure you have Node.js (version 16 or later) and npm installed. You can download it from [nodejs.org](https://nodejs.org/).
 
-    ```bash
-    npm install
-    ```
+3. **Install dependencies**
+   Run the following command to install the required packages:
+   ```bash
+   npm install
+   ```
 
-4. Start the development server:
+4. **Run the development server**
+   Start the application in development mode:
+   ```bash
+   npm run dev
+   ```
 
-    ```bash
-    npm run dev
-    ```
+5. **Access the application**
+   Open your web browser and navigate to `http://localhost:3000` to view the application.
 
-The application will be available on `http://localhost:5173`.
+## Usage Instructions
+
+1. **Shorten URLs**: Enter a long URL in the input field and click the "Shorten" button to generate a shortened link.
+2. **Manage Links**: Users can view and manage their shortened links from the dashboard.
+3. **Share Links**: Copy the shortened links and share them via social media, emails, or other platforms.
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## Acknowledgements
-
-This project leverages the following libraries and tools:
-
-- [React](https://reactjs.org/)
-- [Vite](https://vitejs.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [tailwindcss](https://tailwindcss.com/)
-
-- ... and many more listed in the project's [package.json](package.json) file.
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any bugs or feature requests.
 
 ## License
 
-This project is licensed under the terms of the MIT license. For more details, see the [LICENSE](LICENSE) file in the repository.
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+---
+
+For more information and updates, please follow the [GDSC Farmingdale GitHub](https://github.com/GDSC-FSC/gdsc-farmingdale-links).
