@@ -1,67 +1,80 @@
-# GDSC FSC | URL Shortener
+# GDSC FSC Url Shortener
 
-Welcome to the GDSC FSC URL Shortener project! This web application is designed to help users manage and share URLs efficiently. 
+This project is a web application developed by the Google Developer Student Clubs (GDSC) at Farmingdale State College. It serves as a URL shortener that allows users to easily manage and share shortened links. The application is built using React and includes features such as a responsive design, cookie consent management, and integration with Google Tag Manager for analytics.
 
-## Table of Contents
-- [Features](#features)
-- [Technologies](#technologies)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## Major Parts of the Code
 
-## Features
-- User-friendly interface for shortening URLs.
-- Supports multiple platforms (iOS, Android, Windows).
-- Progressive Web App (PWA) capabilities.
-- Open Graph and Twitter card integration for enhanced sharing.
-- Cookie consent management for user privacy.
+- **Assets**: Contains images, icons, and SVG files used throughout the application.
+  - `/assets/images`: Images used in the application (e.g., logos, backgrounds).
+  - `/assets/svgs`: SVG files for scalable vector graphics.
 
-## Technologies
-This project is built using the following technologies:
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Firebase
-- **Utilities**: Workbox for service workers, and various Radix UI components
-- **Deployment**: Vercel or Firebase Hosting
+- **PWA Configuration**: Files required for configuring the application as a Progressive Web App (PWA).
+  - `/pwa/manifest.json`: Manifest file that provides metadata for the PWA.
+  - `/pwa/icons`: Various icon files for different devices and platforms.
+
+- **Service Workers**: 
+  - `sw.js`: Service worker file for enabling offline capabilities and caching strategies.
+  - `registerSW.js`: Script to register the service worker.
+
+- **Source Code**: 
+  - The main application code is primarily located in the `/src` directory, which includes components, utilities, and hooks.
+  - The main entry point for the application is located in `index.html` and `main.tsx`.
+
+- **Styling**: 
+  - Styles are managed using Tailwind CSS, with utility classes applied throughout the components.
+
+- **GitHub Actions**: 
+  - CI/CD workflows for automating tasks such as code linting, dependency updates, and stale issue management.
 
 ## Installation
+
 To get started with the project, follow these steps:
 
-1. **Clone the repository**:
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/GDSC-FSC/gdsc-farmingdale-links.git
    cd gdsc-farmingdale-links
    ```
 
-2. **Install dependencies**:
-   Ensure you have Node.js installed on your machine. Then run:
+2. **Install Dependencies**:
+   Make sure you have Node.js installed. Then run:
    ```bash
    npm install
    ```
 
-3. **Setup environment variables**:
-   Create a `.env` file in the root directory and add the necessary Firebase configuration settings.
-
-4. **Run the development server**:
-   After installing the dependencies and setting up the environment variables, start the development server with:
+3. **Run the Development Server**:
+   Start the application using:
    ```bash
    npm start
    ```
 
-## Usage
-Once the server is running, you can access the application by going to `http://localhost:3000` in your web browser. 
+4. **Build for Production**:
+   To create a production build of the application, run:
+   ```bash
+   npm run build
+   ```
 
-### Key Features to Explore:
-- **URL Shortening**: Paste any URL and click the button to shorten it.
-- **Management Interface**: View and manage your shortened URLs.
-- **PWA Functionality**: Install the app on your device for offline access.
+5. **Deploy**:
+   You can deploy the built application to a hosting service of your choice.
+
+## Usage
+
+Once the application is running, you can:
+
+- **Shorten URLs**: Enter a long URL into the input field and click the button to generate a shortened link.
+- **Manage Links**: View and manage your shortened links from the dashboard.
+- **Share Links**: Copy the shortened links to share with others easily.
+
+The application is designed to be user-friendly and responsive, adapting to different screen sizes and devices.
 
 ## Contributing
-We welcome contributions! If you would like to contribute to the project, please fork the repository and create a pull request. Ensure to follow the code of conduct and adhere to the coding standards.
+
+Contributions are welcome! Please feel free to submit issues or pull requests to help us improve the application.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for more information.
 
----
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
-Feel free to reach out if you have any questions or suggestions! Happy coding!
+## Acknowledgements
+
+Thank you to all contributors and the Google Developer Student Clubs for their support in developing this project.
