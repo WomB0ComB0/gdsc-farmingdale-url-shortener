@@ -1,67 +1,66 @@
-# GDSC FSC | URL Shortener
+# GDSC FSC | Url Shortener
 
-Welcome to the GDSC FSC URL Shortener project! This web application is designed to help users manage and share URLs efficiently. 
+GDSC FSC is a web application designed to be a link shortener for the Google Developer Student Clubs at Farmingdale State College. This application makes it easy to manage and share URLs for staying updated on the latest events and domains.
 
-## Table of Contents
-- [Features](#features)
-- [Technologies](#technologies)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## Major Components of the Code
 
-## Features
-- User-friendly interface for shortening URLs.
-- Supports multiple platforms (iOS, Android, Windows).
-- Progressive Web App (PWA) capabilities.
-- Open Graph and Twitter card integration for enhanced sharing.
-- Cookie consent management for user privacy.
+### 1. **Frontend**
+- **HTML/CSS/JavaScript**: The core of the application is built using HTML, CSS (with Tailwind CSS for styling), and JavaScript (React framework).
+- **React Components**: The application uses React components for building the user interface. Components like `Button`, `Card`, `Tooltip`, and various form elements are implemented for a cohesive UI experience.
+- **State Management**: The application utilizes React Hooks for managing state and props across components.
 
-## Technologies
-This project is built using the following technologies:
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Firebase
-- **Utilities**: Workbox for service workers, and various Radix UI components
-- **Deployment**: Vercel or Firebase Hosting
+### 2. **Progressive Web App (PWA) Configuration**
+- **Manifest File**: The `manifest.json` file contains metadata for the web app, such as the app name, icons, and theme colors, allowing it to be installed on devices.
+- **Service Worker**: A service worker (`sw.js`) is included to cache assets and enable offline functionality.
 
-## Installation
-To get started with the project, follow these steps:
+### 3. **SEO and Analytics**
+- **Meta Tags**: Utilizes meta tags in the HTML to improve SEO and social media sharing.
+- **Google Tag Manager**: Integrated for tracking and analyzing user interactions.
 
-1. **Clone the repository**:
+### 4. **Dependency Management**
+- **npm**: The project uses npm for managing dependencies, with a configured workflow for automatic dependency updates using GitHub Actions.
+
+### 5. **GitHub Actions**
+- **Continuous Integration**: Workflows for running checks, applying code formatting (Prettier), and analyzing code quality using CodeQL.
+
+## Installation Instructions
+
+To set up the GDSC FSC Url Shortener locally, follow these steps:
+
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/GDSC-FSC/gdsc-farmingdale-links.git
    cd gdsc-farmingdale-links
    ```
 
-2. **Install dependencies**:
-   Ensure you have Node.js installed on your machine. Then run:
+2. **Install Dependencies**
+   Make sure you have Node.js installed (version 16 or higher). Then, run:
    ```bash
    npm install
    ```
 
-3. **Setup environment variables**:
-   Create a `.env` file in the root directory and add the necessary Firebase configuration settings.
-
-4. **Run the development server**:
-   After installing the dependencies and setting up the environment variables, start the development server with:
+3. **Run the Development Server**
+   Start the application locally by running:
    ```bash
    npm start
    ```
 
-## Usage
-Once the server is running, you can access the application by going to `http://localhost:3000` in your web browser. 
+4. **Open the Application**
+   Navigate to `http://localhost:3000` in your web browser to see the application in action.
 
-### Key Features to Explore:
-- **URL Shortening**: Paste any URL and click the button to shorten it.
-- **Management Interface**: View and manage your shortened URLs.
-- **PWA Functionality**: Install the app on your device for offline access.
+## Usage Instructions
+
+1. **Creating Short Links**: Enter the URL you want to shorten in the input field and click the 'Shorten' button.
+2. **Managing Links**: Users can manage their shortened links via the user interface, which may include options to view, edit, or delete links.
+3. **Sharing Links**: Once a link is shortened, it can be easily copied and shared with others.
 
 ## Contributing
-We welcome contributions! If you would like to contribute to the project, please fork the repository and create a pull request. Ensure to follow the code of conduct and adhere to the coding standards.
+
+Contributions are welcome! If you find any bugs or would like to propose features, please open an issue or submit a pull request.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for more information.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-
-Feel free to reach out if you have any questions or suggestions! Happy coding!
+For any further questions or support, please reach out to the project maintainers. Enjoy using the GDSC FSC Url Shortener!
